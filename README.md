@@ -18,27 +18,25 @@
 
 - has_many :items
 - has_many :orders
-- has_many :shippings
 
 ##  itemsテーブル
 
-| Column               | Type        | Option                         |
-| -------------------- | ----------- | ------------------------------ |
-| name                 | string      | null false                     |
-| info                 | text        | null false                     |
-| category             | string      | null false                     |
-| sales_status         | string      | null false                     |
-| shipping_free_status | string      | null false                     |
-| prefecture           | string      | null false                     |
-| scheduled            | string      | null false                     |
-| price                | integer     | null false                     |
-| user                 | references  | null false foreign_key: true   |
+| Column                  | Type        | Option                         |
+| ----------------------- | ----------- | ------------------------------ |
+| name                    | string      | null false                     |
+| info                    | text        | null false                     |
+| category_id             | integer     | null false                     |
+| sales_status_id         | integer     | null false                     |
+| shipping_free_status_id | integer     | null false                     |
+| prefecture_id           | integer     | null false                     |
+| scheduled_id            | integer     | null false                     |
+| price                   | integer     | null false                     |
+| user                    | references  | null false foreign_key: true   |
 
 ### Association
 
 - belongs_to :user
 - has_one    :order
-- has_one    :shipping
 
 ## ordersテーブル
 
@@ -55,21 +53,17 @@
 
 ## shippingテーブル
 
-| Column          | Type       | Option                         |
-| --------------- | ---------- | ------------------------------ |
-| postal_code     | string     | null false                     |
-| prefecture      | string     | null false                     |
-| city            | string     | null false                     |
-| addresses       | string     | null false                     |
-| building        | string     | null false                     |
-| phone_number    | string     | null false                     |
-| user            | references | null false foreign_key: true   |
-| item            | references | null false foreign_key: true   |
-| order           | references | null false foreign_key: true   |
+| Column             | Type       | Option                         |
+| ------------------ | ---------- | ------------------------------ |
+| postal_code        | string     | null false                     |
+| prefecture_id      | integer    | null false                     |
+| city               | string     | null false                     |
+| addresses          | string     | null false                     |
+| building           | string     |                                |
+| phone_number       | string     | null false                     |
+| order              | references | null false foreign_key: true   |
 
 ### Association
-
-- belongs_to :user
-- belongs_to :item
+ 
 - belongs_to :order
 
