@@ -30,7 +30,7 @@
 | shipping_free_status_id | integer    | null: false                    |
 | prefecture_id           | integer    | null: false                    |
 | scheduled_delivery_id   | integer    | null: false                    |
-| price_id                | integer    | null: false                    |
+| price                   | integer    | null: false                    |
 | user                    | references | null: false, foreign_key: true |
 
 ### Association
@@ -53,7 +53,7 @@
 - has_one    :shipping
 
 
-## shippingテーブル
+## shippingsテーブル
 
 | Column              | Type         | Option                         |
 | ------------------- | ------------ | ------------------------------ |
