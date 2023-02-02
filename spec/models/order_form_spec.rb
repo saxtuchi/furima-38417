@@ -63,7 +63,7 @@ RSpec.describe OrderForm, type: :model do
         @order.valid?
         expect(@order.errors.full_messages).to include('Phone number 半角文字ハイフンなしで入力してください')
       end
-      it 'phone_numberが11桁以上では購入できない' do
+      it 'phone_numberが12桁以上では購入できない' do
         @order.phone_number = '12345671234567'
         @order.valid?
         expect(@order.errors.full_messages).to include('Phone number 半角文字ハイフンなしで入力してください')
