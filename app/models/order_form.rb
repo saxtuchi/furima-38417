@@ -7,7 +7,7 @@ class OrderForm
     validates :prefecture_id, numericality: { other_than: 1, message: "can't be blank" }
     validates :city
     validates :addresses
-    validates :phone_number, format: { with: /\A\d[0-9]{10,11}\z/, message: '半角文字ハイフンなしで入力してください' }
+    validates :phone_number, format: { with: /\A\d[0-9]{9,12}\z/, message: '半角文字ハイフンなしで入力してください' }
     validates :token
   end
 
